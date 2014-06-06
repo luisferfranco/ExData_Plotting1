@@ -31,7 +31,7 @@ plot3 = function() {
 	lines(data$Sub_metering_3, type="l", col="blue")
 	legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
 		cex=0.8, col=c("black", "red", "blue"),
-		lty=1, lwd=1)
+		lty=1, lwd=1, bty="n")
 	box()
 }
 
