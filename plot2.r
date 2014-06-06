@@ -10,16 +10,20 @@ data$Date = as.Date(strptime(data$Date,format="%d/%m/%Y"))
 png("plot2.png", width=480, height=480)
 
 
-plotgap = data$Global_active_power
+plot2 = function() {
+	plotgap = data$Global_active_power
 
-## Easy information on how to annotate and generate a complex plot step by step
-## https://www.harding.edu/fmccown/r/
-plot(plotgap, type="l", 
-		col="black", 
-		ylab="Global Active Power (kilowatts)",
-		axes=FALSE)
+	## Easy information on how to annotate and generate a complex plot step by step
+	## https://www.harding.edu/fmccown/r/
+	plot(plotgap, type="l", 
+			col="black", 
+			ylab="Global Active Power (kilowatts)",
+			axes=FALSE)
 
-axis(1, at=seq(0, 3000, by=1500), labels=c("Thu","Fri","Sat"))
-axis(2, las=1, at=seq(0,8,by=2))
-box()
+	axis(1, at=seq(0, 3000, by=1500), labels=c("Thu","Fri","Sat"))
+	axis(2, las=1, at=seq(0,8,by=2))
+	box()
+}
+
+plot2()
 dev.off()
